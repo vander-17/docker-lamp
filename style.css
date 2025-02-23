@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Estilizando o menu */
+nav ul {
+    list-style: none;
+    background: #009ddd;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Banner do hotel */
+.banner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Localização */
+.localizacao img {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+/* Seção dos quartos */
+.quartos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.quarto img {
+    width: 200px;
+    height: 150px;
+    border-radius: 8px;
+}
+
+.quarto p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carrossel-principal {
+    margin: 20px auto;
+    max-width: 800px;
+}
+.carrossel-principal img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrossel-navegacao {
+    margin: 10px auto;
+    max-width: 600px;
+}
+.carrossel-navegacao img {
+    width: 100px; /* Tamanho das miniaturas */
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+.carrossel-navegacao img:hover {
+    opacity: 1;
+}
+.slick-current img {
+    opacity: 1; /* Destaque a miniatura atual */
+}

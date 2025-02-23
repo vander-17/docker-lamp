@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  apache:
+    build: ./app
+    container_name: apache
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - mysql
+
+  php:
+    image: bitnami/php-fpm:latest
+    container_name: php
+    restart: always
+    volumes:
+      - ./app:/app
+
+  mysql:
+    image: bitnami/mariadb:latest
+    container_name: mysql
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=lampdb
+      - MARIADB_USER=admin
+      - MARIADB_PASSWORD=admin
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/bitnami/mariadb
+
+volumes:
+  mysql_data:
